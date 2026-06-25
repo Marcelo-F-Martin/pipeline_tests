@@ -56,6 +56,18 @@ def recuperar_script_sql():
         print(f'✖️ Error al acceder al archivo Nº 4: Estado {respuesta_4.status_code}')
 
 def ejecutar_script_sql():
+    
+    load_dotenv()
+    
+    usuario = os.getenv("BD_USER")
+    host = os.getenv("BD_HOST")
+    puerto = os.getenv("BD_PORT")
+    clave = os.getenv("BD_PASS")
+    bd_capa_uno = os.getenv("BD_CAPA_UNO")
+    bd_capa_dos = os.getenv("BD_CAPA_DOS")
+    tabla_temp = os.getenv("TABLA_TEMP_CAPA_UNO")
+    
+    
     script_sql_1, script_sql_2, script_sql_3, script_sql_4 = recuperar_script_sql()
 
     # se crean motores para diferentes acciones 
