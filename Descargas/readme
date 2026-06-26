@@ -1,5 +1,0 @@
-Descargue todos los archivos de esta carpeta en el mismo directorio para ejecutar el pipeline en su entorno local.
-
-  1. PI_UA_orquestador.ipynb ==> codigo fuente que orquesta el pipeline del proyecto.
-  2. PI_UA_analisis_cobranzas.pbit ==> herramienta de visualización de los datos. Contiene parámetros de conexión a MySQL.
-  3. .env.ejemplo ==> variables de entorno de conexión a MySQL local. (IMPORTANTE: Modifique con sus credenciales de acceso a MySQL y renombre el archivo a ".env")
