@@ -199,15 +199,15 @@ def check_env_y_conn_MySQL():
 def ini_pbi():
     # Inicializa aplicación Power BI.
 
-nombre_arch_pbi = "PI_UA_analisis_cobranzas.pbit"
-
-if os.path.exists(nombre_arch_pbi):
-    print("===============================================")
-    print(" Archivo para Visualizar los datos detectado.")
-    print("   ⏳... Espere un instante mientras inicia Power BI...")
-    print("===============================================")
-    os.startfile(nombre_arch_pbi)
-else:
-    print("===============================================")
-    print(f"✖️ Archivo '{nombre_arch_pbi}' NO detectado en el directorio actual.")
-    print("===============================================")
+    nombre_arch_pbi = "PI_UA_analisis_cobranzas.pbit"
+    
+    if os.path.exists(nombre_arch_pbi):
+        print("===============================================")
+        print(" Archivo para Visualizar los datos detectado.")
+        print("   ⏳... Espere un instante mientras inicia Power BI...")
+        print("===============================================")
+        os.startfile(nombre_arch_pbi)
+    else:
+        print("===============================================")
+        print(f"✖️ Archivo '{nombre_arch_pbi}' NO detectado en el directorio actual.")
+        print("===============================================")
