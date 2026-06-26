@@ -23,12 +23,7 @@ def guardar_archivo(df):
     return mensaje
 
 def recuperar_script_sql():
-    #url_sql_ddl = 'https://raw.githubusercontent.com/Marcelo-F-Martin/PI_UA_pipeline_analisis_de_cobranza/refs/heads/main/SQL/1_PI_UA_DDL.sql'
-    #url_sql_inserts = 'https://raw.githubusercontent.com/Marcelo-F-Martin/PI_UA_pipeline_analisis_de_cobranza/refs/heads/main/SQL/2_PI_UA_inserts.sql'
-    #url_sql_vistas = 'https://raw.githubusercontent.com/Marcelo-F-Martin/PI_UA_pipeline_analisis_de_cobranza/refs/heads/main/SQL/4_PI_UA_capa_dos_vistas.sql'
-    #url_sql_sp = 'https://raw.githubusercontent.com/Marcelo-F-Martin/PI_UA_pipeline_analisis_de_cobranza/refs/heads/main/SQL/3_PI_UA_SP_calendario.sql'
-
-    ruta_repo_scriptSQL = 'https://raw.githubusercontent.com/Marcelo-F-Martin/PI_UA_pipeline_analisis_de_cobranza/refs/heads/main/SQL'
+    ruta_repo_scriptSQL = 'https://raw.githubusercontent.com/Marcelo-F-Martin/pipeline_analisis_de_cobranzas/refs/heads/main/SQL'
 
     url_sql_ddl = f"{ruta_repo_scriptSQL}/1_PI_UA_DDL.sql"
     url_sql_inserts = f"{ruta_repo_scriptSQL}/2_PI_UA_inserts.sql"
