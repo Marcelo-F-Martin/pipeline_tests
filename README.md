@@ -31,36 +31,41 @@ El archivo PBI, fue diseñado con: parámetros dinámicos de conexión a MySQL, 
 > Siga estos pasos para reproducir el pipeline en su entorno local:
 
 1. Descargue todos los archivos de la carpeta ‘**descargas**’ en el mismo directorio local.
-2. Modifique el archivo ‘.env.example’ con sus credenciales de acceso a MySQL, y luego renombre el archivo a ‘**.env**’
+2. Modifique el archivo ‘**.env.ejemplo**’ con sus credenciales de acceso a MySQL, y luego renombre el archivo a ‘**.env**’
 3. Ejecute el archivo de Jupyter Notebook ‘**PI_UA_orquestador.ipynb**’.
    * Importante: Ejecutar este archivo dentro del mismo directorio (carpeta) donde se descargaron los archivos del punto 1.
-4. El flujo finaliza inicializando la plantilla de Power BI para visualizar los resultados.
+4. El flujo finaliza inicializando el template de Power BI para visualizar los resultados.
 <hr />
 
 ## 🗂️ Estructura del Proyecto
 
 ```text
-mi-portfolio/
+pipeline_analisis_de_cobranzas/
 │
-├──  data/                     # Repositorio de datos del proyecto
-│   ├── raw_data.csv           # Archivos de datos en crudo (sin procesar)
-│   └── clean_data.csv         # Archivos de datos limpios y transformados
+├── sql/                                 # Scripts SQL
+│   ├── 1_PU_UA_DDL.sql                    # Define estructura de BDs
+│   ├── 2_PU_UA_inserts.sql                # Ingesta datos en BDs
+│   ├── 3_PU_UA_SO_calendario.sql          # Crea SP de para tabla dim "calendario"
+│   ├── 4_PU_UA_capa_dos_vistas.sql        # Crea vistas para consumo final
 │
-├──  descargas/                # Archivos principales para el usuario final
-│   ├── orquestador.ipynb      # Script principal (Notebook para descargar y ejecutar)
-|   └──
-|   └──
+├── data/                                # Datasets del proyecto
+│   ├── cruda/                             # Archivos .xls en crudo
+|   └── limpia/                            # Archivo .csv final
 │
-├──  modulos/                  # Código auxiliar estructurado
-│   ├── funciones_etl.py       # Módulos .py invocados por el orquestador
-│   └── funciones_etl.py       # Módulos .py invocados por el orquestador
+├── descargas/                           # Archivos para descargar
+│   ├── .env.ejemplo                        # ejemplo de variables de entorno MySQL (se debe renombrar a .env)
+│   └── PI_UA_analisis_cobranzas.pbit       # Template para Power BI Desktop
+│   └── PI_UA_orquestador.ipynb             # Archivo orquestador del pipeline
 │
-└──  SQL/                      # Consultas y scripts de bases de datos
-    ├── creacion_tablas.sql    # Scripts para definir la estructura de datos
-    └── transformaciones.sql   # Consultas SQL utilizadas en el proceso
+├── modulos/                             # Modulos del código fuente
+│   ├── carga.py                            # Funciones para ingesta de datos en MySQL
+│   └── extraccion.py                       # Funciones para extraer y unificar datos
+│   └── transformacion.py                   # Funciones para normalizar datos
+│
+├── README.md                            # Presentación e intrucciones importantes
+│
+└── requirements.txt                     # Dependencias (instala automaticamente el orquestador)
 ```
-
-
 <hr />
 
 ## 🖊️ Autor
